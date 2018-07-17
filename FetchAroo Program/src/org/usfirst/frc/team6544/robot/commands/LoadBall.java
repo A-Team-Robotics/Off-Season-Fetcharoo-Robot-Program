@@ -9,7 +9,9 @@ public class LoadBall extends CommandGroup {
 
     public LoadBall() {
         addSequential(new GateOne());
+        addSequential(new GateTwoClose());
         addSequential(new GateTwo());
+        addSequential(new GateTwoClose());
         //      addSequential(new Command2());
         // these will run in order.
 

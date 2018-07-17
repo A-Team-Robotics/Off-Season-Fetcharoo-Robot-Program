@@ -2,24 +2,22 @@ package org.usfirst.frc.team6544.robot.commands;
 
 import org.usfirst.frc.team6544.robot.Robot;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 
 /**
  *
  */
-public class GateTwo extends InstantCommand {
+public class GateOneClose extends InstantCommand {
 
-    public GateTwo() {
-    	super();
+    public GateOneClose() {
+        super();
         // Use requires() here to declare subsystem dependencies
         requires(Robot.solenoids);
     }
 
-    // Called just before this Command runs the first time
+    // Called once when the command executes
     protected void initialize() {
-    	Robot.solenoids.gateTwoOpen();
+    	Robot.solenoids.gateOneClose();
     }
-    	
+
 }

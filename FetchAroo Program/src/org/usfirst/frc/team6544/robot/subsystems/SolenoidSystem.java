@@ -26,27 +26,30 @@ public class SolenoidSystem extends Subsystem {
 	 *
 	 * @param a set either true for open or false for close
 	 */
-    public void setGateOne(boolean a) {
-    	if(a == true) {
+    public void gateOneOpen() {
     		gateone.set(Value.kForward);
-    	}else {
-    		gateone.set(Value.kReverse);
-    	}
+    
     }
+    public void gateOneClose() {
+	
+		gateone.set(Value.kReverse);
+
+}
     
     /**
 	 * Gate Two Control open or close
 	 *
 	 * @param a set either true for open or false for close
 	 */
-    public void setGateTwo(boolean a) {
-    	if(a == true) {
-    		Timer.delay(0.5);
-    		gatetwo.set(Value.kForward);
-    	}else {
-    		Timer.delay(0.5);
+    public void gateTwoOpen() {
+    	
     		gatetwo.set(Value.kReverse);
-    	}
+    	
+    		
+    	
+    }
+    public void gateTwoClose() {
+    	gatetwo.set(Value.kForward);
     }
 }
 

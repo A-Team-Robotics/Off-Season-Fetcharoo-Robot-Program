@@ -8,10 +8,8 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
  *
  */
 public class ShootTwo extends InstantCommand {
-	private double speed;
-    public ShootTwo(double speed) {
+	public ShootTwo() {
         super();
-        this.speed = speed;
         // Use requires() here to declare subsystem dependencies
        requires(Robot.shooterTwo);
     }

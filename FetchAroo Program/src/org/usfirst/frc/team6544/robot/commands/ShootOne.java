@@ -11,6 +11,7 @@ public class ShootOne extends InstantCommand {
 	private double speed;
     public ShootOne(double speed) {
         super();
+        this.speed=speed;
         // Use requires() here to declare subsystem dependencies
         requires(Robot.shooterOne);
     }

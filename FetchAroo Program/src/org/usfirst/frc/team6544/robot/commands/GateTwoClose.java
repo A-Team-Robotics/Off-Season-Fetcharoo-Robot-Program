@@ -7,16 +7,17 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 /**
  *
  */
-public class Nothing1 extends InstantCommand {
+public class GateTwoClose extends InstantCommand {
 
-    public Nothing1() {
+    public GateTwoClose() {
         super();
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.shooterTwo);
+       requires(Robot.solenoids);
     }
 
     // Called once when the command executes
     protected void initialize() {
+    	Robot.solenoids.gateTwoClose();
     }
 
 }

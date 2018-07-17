@@ -15,13 +15,13 @@ package org.usfirst.frc.team6544.robot;
  */
 public class RobotMap {
 	//Motors connected to a talon
-	public static final int kFronLeftCIM = 3;
-	public static final int kBackRightCIM = 4;
-	public static final int kFrontRightCIM = 5;
-	public static final int kBackLeftCIM = 0;
-	public static final int shootingMotorOne = 6;
-	public static final int conveyorMotor = 7;
-	public static final int shootingMotorTwo = 1;
+	public static final int kFronLeftCIM = 7;
+	public static final int kBackRightCIM = 0;
+	public static final int kFrontRightCIM = 4;
+	public static final int kBackLeftCIM = 6;
+	public static final int shootingMotorOne = 2;
+	public static final int conveyorMotor = 1;
+	public static final int shootingMotorTwo = 5;
 	//Solenoids
 	public static final int kGATE1[] = {0,1};
 	public static final int kGATE2[] = {2,3};

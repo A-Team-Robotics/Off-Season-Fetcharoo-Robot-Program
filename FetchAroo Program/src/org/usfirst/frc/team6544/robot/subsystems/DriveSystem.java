@@ -24,9 +24,9 @@ public class DriveSystem extends Subsystem {
 	private static final WPI_TalonSRX _backRightMotor = new WPI_TalonSRX(RobotMap.kBackRightCIM);
 	private static final WPI_TalonSRX _frontRightMotor = new WPI_TalonSRX(RobotMap.kBackLeftCIM);
 	private static final WPI_TalonSRX _backLeftMotor = new WPI_TalonSRX(RobotMap.kFrontRightCIM);
-	private static final SpeedControllerGroup right = new SpeedControllerGroup(_frontLeftMotor, _backLeftMotor);
-	private static final SpeedControllerGroup left = new SpeedControllerGroup(_frontRightMotor, _backRightMotor);
-	private static final DifferentialDrive ArcadeDrive = new DifferentialDrive(left, right);
+	private static final SpeedControllerGroup left = new SpeedControllerGroup(_frontLeftMotor, _backLeftMotor);
+	private static final SpeedControllerGroup right = new SpeedControllerGroup(_frontRightMotor, _backRightMotor);
+	private static final DifferentialDrive ArcadeDrive = new DifferentialDrive(right, left);
 	/**
    	 * DriveSystem constructor
    	*/
@@ -43,8 +43,10 @@ public class DriveSystem extends Subsystem {
    	 * Initialization Method Put things that need to be setup before use here
    	 */
     public void driveBaseInit() {
+    	_frontLeftMotor.setInverted(true);
+    	_backRightMotor.setInverted(true);
+    	_frontRightMotor.setInverted(false);
     	_backLeftMotor.setInverted(false);
-    	_backRightMotor.setInverted(false);
     	_frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
     	_frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
     	ArcadeDrive.setSafetyEnabled(true);

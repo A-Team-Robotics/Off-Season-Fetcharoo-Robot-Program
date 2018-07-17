@@ -1,6 +1,7 @@
 package org.usfirst.frc.team6544.robot.subsystems;
 
 import org.usfirst.frc.team6544.robot.RobotMap;
+import org.usfirst.frc.team6544.robot.commands.Nothing1;
 import org.usfirst.frc.team6544.robot.commands.StopShootingTwo;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
