@@ -12,7 +12,7 @@ public class Nothing1 extends InstantCommand {
     public Nothing1() {
         super();
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.shooterTwo);
+        requires(Robot.solenoids);
     }
 
     // Called once when the command executes

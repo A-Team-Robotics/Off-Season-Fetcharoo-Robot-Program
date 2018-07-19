@@ -1,30 +1,35 @@
 package org.usfirst.frc.team6544.robot.commands;
 
-import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team6544.robot.Robot;
+
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 
 /**
  *
  */
-public class LoadBall extends CommandGroup {
+public class LoadBall extends Command {
 
     public LoadBall() {
-        addSequential(new GateOne());
-        addSequential(new GateTwoClose());
-        addSequential(new GateTwo());
-        addSequential(new GateTwoClose());
-        //      addSequential(new Command2());
-        // these will run in order.
-
-        // To run multiple commands at the same time,
-        // use addParallel()
-        // e.g. addParallel(new Command1());
-        //      addSequential(new Command2());
-        // Command1 and Command2 will run in parallel.
-
-        // A command group will require all of the subsystems that each member
-        // would require.
-        // e.g. if Command1 requires chassis, and Command2 requires arm,
-        // a CommandGroup containing them would require both the chassis and the
-        // arm.
+    	super();
+    	requires(Robot.solenoids);
     }
+    
+    protected void initialize() {
+    	// TODO Auto-generated method stub
+    	Robot.solenoids.gateOneOpen();
+    	Timer.delay(0.2);
+    	Robot.solenoids.gateOneClose();
+    	Timer.delay(0.2);
+    	Robot.solenoids.gateTwoOpen();
+    	Timer.delay(0.2);
+    	Robot.solenoids.gateTwoClose();
+    }
+
+	@Override
+	protected boolean isFinished() {
+		Timer.delay(1);
+		return true;
+	}
 }

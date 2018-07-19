@@ -10,6 +10,7 @@ package org.usfirst.frc.team6544.robot;
 import org.usfirst.frc.team6544.robot.subsystems.CameraProcessor;
 import org.usfirst.frc.team6544.robot.subsystems.ConveyorSystem;
 import org.usfirst.frc.team6544.robot.subsystems.DriveSystem;
+import org.usfirst.frc.team6544.robot.subsystems.Saftey;
 import org.usfirst.frc.team6544.robot.subsystems.ShootingSystemOne;
 import org.usfirst.frc.team6544.robot.subsystems.ShootingSystemTwo;
 import org.usfirst.frc.team6544.robot.subsystems.SolenoidSystem;
@@ -34,9 +35,10 @@ public class Robot extends TimedRobot {
 	public static ShootingSystemTwo shooterTwo = new ShootingSystemTwo();
 	public static SolenoidSystem solenoids = new SolenoidSystem();
 	public static ConveyorSystem conveyor = new ConveyorSystem();
+	public static Saftey saftey = new Saftey();
 	 private CameraProcessor Cam1;
 	Command m_autonomousCommand;
-	SendableChooser<Command> m_chooser = new SendableChooser<>();
+	SendableChooser<Double> m_chooser = new SendableChooser<>();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -48,7 +50,10 @@ public class Robot extends TimedRobot {
 		Cam1 = new CameraProcessor("GripperCam",0);//set the camera name and what usb port it is connected to
 		Cam1.start(); //Cam1.SendToDashboard("cam0");
 		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		SmartDashboard.putData("Ball Distance", m_chooser);
+		m_chooser.addDefault("Full Distance", 1.0);
+		m_chooser.addObject("Half Distance",  0.5);
+		m_chooser.addObject("Quater Distance", 0.35);
 	}
 
 	/**
@@ -79,7 +84,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_chooser.getSelected();
+		
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -119,6 +124,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		Robot.shooterTwo.log();
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class StopShootingTwo extends InstantCommand {
 
     // Called once when the command executes
     protected void initialize() {
-    	Robot.shooterTwo.shoot(0);
+    	Robot.shooterTwo.shoot(0.0);
     }
 
 }

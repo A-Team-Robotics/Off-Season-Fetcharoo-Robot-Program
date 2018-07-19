@@ -1,5 +1,6 @@
 package org.usfirst.frc.team6544.robot.subsystems;
 
+import org.usfirst.frc.team6544.robot.Robot;
 import org.usfirst.frc.team6544.robot.RobotMap;
 import org.usfirst.frc.team6544.robot.commands.StopShootingOne;
 

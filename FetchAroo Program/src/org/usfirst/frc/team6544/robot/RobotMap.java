@@ -17,8 +17,8 @@ public class RobotMap {
 	//Motors connected to a talon
 	public static final int kFronLeftCIM = 7;
 	public static final int kBackRightCIM = 0;
-	public static final int kFrontRightCIM = 4;
-	public static final int kBackLeftCIM = 6;
+	public static final int kFrontRightCIM = 6;
+	public static final int kBackLeftCIM = 4;
 	public static final int shootingMotorOne = 2;
 	public static final int conveyorMotor = 1;
 	public static final int shootingMotorTwo = 5;

@@ -22,6 +22,4 @@ public class GateOne extends InstantCommand {
     	Robot.solenoids.gateOneOpen();
     }
     
-  
-    
 }

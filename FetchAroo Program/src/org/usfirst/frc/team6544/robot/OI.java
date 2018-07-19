@@ -33,16 +33,19 @@ public class OI {
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
 	public static Joystick driveController = new Joystick(0);
-	Joystick shootingController = new Joystick(1);
-	 Button shootOne = new JoystickButton(shootingController, 1);
+	public static Joystick shootingController = new Joystick(1);
+	
+	 Button shootOne = new JoystickButton(shootingController, 7);
 	 Button slowFeed = new JoystickButton(shootingController, 2);
 	 Button shoot2 = new JoystickButton(shootingController, 3);
-	 Button gateOne = new JoystickButton(shootingController, 9);
-	 Button	gateTwo = new JoystickButton(shootingController, 10);
-	 Button conveyorAndShoot = new JoystickButton(shootingController,7);
+	 Button gateOne = new JoystickButton(shootingController, 10);
+	 Button	gateTwo = new JoystickButton(shootingController, 9);
+	 Button conveyorAndShoot = new JoystickButton(shootingController, 1);
      Button	rapidFire = new JoystickButton(shootingController, 8);
      Button loadBall = new JoystickButton(shootingController, 5);
-	 Button conveyor = new JoystickButton(shootingController,6);
+     Button dropBall = new JoystickButton(shootingController, 12);
+	 Button conveyor = new JoystickButton(shootingController, 6);
+	 
 	 Button speedOne = new JoystickButton(driveController, 7);
 	 Button speedTwo = new JoystickButton(driveController, 8);
 	 Button speedThree = new JoystickButton(driveController, 3);
@@ -57,9 +60,9 @@ public class OI {
 		 gateOne.whenReleased(new GateOneClose());
 		 gateTwo.whenPressed(new GateTwo());
 		 gateTwo.whenReleased(new GateTwoClose());
-		 shootOne.whileHeld(new ShootOne(1.0));
+		 shootOne.whileHeld(new ShootOne());
 		 slowFeed.whileHeld(new SlowFeed(0.4));
 	     //constantShoot.whileHeld(new SlowShoot());
-		 //loadBall.whileHeld(new LoadBall());
+		 loadBall.whenPressed(new LoadBall());
 	 }
 }
